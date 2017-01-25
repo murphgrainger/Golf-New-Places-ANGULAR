@@ -34,6 +34,12 @@
                 url: '/',
                 component: 'cardList',
             })
+            .state({
+                name: 'playground',
+                parent: 'app',
+                url: '/playground/',
+                component: 'playGround',
+            })
     }
 
 }());
