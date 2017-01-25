@@ -15,9 +15,12 @@
                 'hue-2': '200',
                 'hue-3': '300'
             })
-            .accentPalette('teal')
+            .accentPalette('teal').dark()
             .warnPalette('red')
             .backgroundPalette('grey');
+        $mdThemingProvider
+            .theme('card')
+            .primaryPalette('green').dark()
 
         $stateProvider
             .state({
