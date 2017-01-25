@@ -1,0 +1,15 @@
+body {
+  min-height: 30vh;
+}
+
+header, footer {
+  background-color: #A3FFC6;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.golf-logo {
+  padding-left: .5em;
+}
