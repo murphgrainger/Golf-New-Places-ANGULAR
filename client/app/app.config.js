@@ -4,7 +4,9 @@
     angular.module('app').config(config)
 
 
-    function config($mdThemingProvider) {
+    function config($mdThemingProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.html5Mode(true)
+
         $mdThemingProvider
             .theme('default')
             .primaryPalette('green', {
@@ -16,6 +18,19 @@
             .accentPalette('teal')
             .warnPalette('red')
             .backgroundPalette('grey');
+
+        $stateProvider
+            .state({
+                name: 'app',
+                abstract: true,
+                component: 'app',
+            })
+            .state({
+                name: 'home',
+                parent: 'app',
+                url: '/',
+                component: 'cardList',
+            })
     }
 
 }());

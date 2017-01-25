@@ -1,0 +1,19 @@
+<div class='md-padding' layout="row" layout-wrap>
+    <md-card ng-repeat="course in $ctrl.courses">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{course.name}}</span>
+                <span class="md-subhead">{{course.addr_1}}
+                    {{course.city}}
+                    {{course.state_or_province}}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-md card-media"></div>
+            </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button>Action 1</md-button>
+            <md-button>Action 2</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
