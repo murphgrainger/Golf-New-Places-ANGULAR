@@ -14,27 +14,39 @@ a {
   padding-left: .5em;
 }
 
+.main-content  {
+  height: 500px;
+}
 
-md-grid-list {
-  margin: 8px; }
+md-sidenav {
+  width: 25em;
+}
 
-.black {
-  background: black; }
+md-sidenav h2 {
+  text-align: center;
+}
 
-.green {
-  background: #b9f6ca; }
+input {
+  color: black;
+}
 
-.yellow {
-  background: #ffff8d; }
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-.blue {
-  background: #84ffff; }
+.slider .md-track-container {
+  background: #E53935;
+}
 
-.purple {
-  background: #b388ff; }
+md-input-container {
+  width: 70%!important;
+  display: flex;
+  justify-content: center;
+}
 
-.red {
-  background: #ff8a80; }
-
-md-grid-tile {
-  transition: all 400ms ease-out 50ms; }
+.md-thumb::after {
+  background: #E53935;
+}

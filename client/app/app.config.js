@@ -9,13 +9,8 @@
 
         $mdThemingProvider
             .theme('default')
-            .primaryPalette('green', {
-                'default': '500',
-                'hue-1': '50',
-                'hue-2': '200',
-                'hue-3': '300'
-            })
-            .accentPalette('teal').dark()
+            .primaryPalette('green')
+            .accentPalette('teal')
             .warnPalette('red')
             .backgroundPalette('grey');
         $mdThemingProvider
@@ -34,12 +29,12 @@
                 url: '/',
                 component: 'cardList',
             })
-            .state({
-                name: 'playground',
-                parent: 'app',
-                url: '/playground/',
-                component: 'playGround',
-            })
+            // .state({
+            //     name: 'playground',
+            //     parent: 'app',
+            //     url: '/playground/',
+            //     component: 'playGround',
+            // })
     }
 
 }());
