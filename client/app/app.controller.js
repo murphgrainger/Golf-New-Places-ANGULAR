@@ -16,17 +16,35 @@
         vm.formSubmit = function(search) {
             let distance = search.distance;
             let city = search.city;
+            let publicCheck = search.public;
+            let privateCheck = search.private;
             cardService.geolocate(buildGeoURL(city))
                 .then(result => {
                     let lat = result.data.results[0].geometry.location.lat;
                     let lng = result.data.results[0].geometry.location.lng;
-                    // let url = swingURL(lat, lng, distance)
-                    // console.log(url);
                     cardService.getCourses(swingURL(lat, lng, distance))
-                        .then(courses => {
-                            vm.courses = courses;
+                        .then(data => {
+                            vm.courses = data.courses;
+                            const moreCoursesURL = data.meta.courses.next;
+                            if (moreCoursesURL) {
+                                cardService.getMoreCourses(moreCoursesURL)
+                                    .then(moreCourses => {
+                                        moreCourses.forEach(element => {
+                                            vm.courses.push(element);
+                                        });
+                                    })
+                            }
+                            // if (publicCheck === true && privateCheck !== true) {
+                            //     console.log('public only');
+                            //
+                            // } else if (publicCheck !== true && privateCheck === true) {
+                            //     console.log('private only');
+                            //
+                            // } else {
+                            //     console.log('both');
+                            //
+                            // }
                             delete vm.search;
-                            return courses;
                         });
                 })
         }

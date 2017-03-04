@@ -9,15 +9,21 @@
 
         this.geolocate = function(googleURL) {
             return $http.get(googleURL).then(function(response) {
-                return response
-            })
-        }
+                return response;
+            });
+        };
         this.getCourses = function(swingURL) {
             return $http.get(swingURL).then(function(response) {
-                const courses = response.data.courses
-                return courses
-            })
-        }
+                return response.data;
+            });
+        };
+
+        this.getMoreCourses = function(moreCoursesURL) {
+            return $http.get(moreCoursesURL).then(function(response) {
+                const moreCourses = response.data.courses
+                return moreCourses;
+            });
+        };
     }
 
 }())
