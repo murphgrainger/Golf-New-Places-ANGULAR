@@ -5,6 +5,20 @@ body {
 header, footer {
   background-color: #A3FFC6;
 }
+header {
+  height: 15vh;
+}
+main {
+  height: 80vh;
+}
+
+footer {
+  height: 5vh;
+}
+
+/*main {
+  margin-bottom: -3em;
+}*/
 
 a {
   color: #00B7FF;

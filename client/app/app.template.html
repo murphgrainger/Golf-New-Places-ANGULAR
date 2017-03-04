@@ -1,17 +1,20 @@
 <div layout="column">
-    <md-toolbar class="md-medium-tall">
-        <div layout="row" layout-align="center center">
-            <div flex="5">
-                <i class="material-icons golf-logo">golf_course</i>
+    <header>
+        <md-toolbar class="md-medium-tall">
+            <div layout="row" layout-align="center center">
+                <div flex="5">
+                    <i class="material-icons golf-logo">golf_course</i>
+                </div>
+                <div flex="80">
+                    <h1>Golf New Places</h1>
+                </div>
+                <div flex>
+                    <md-button id="search" class="md-raised md-warn" ng-click="$ctrl.openLeftMenu()">Search</md-button>
+                </div>
             </div>
-            <div flex="80">
-                <h1>Golf New Places</h1>
-            </div>
-            <div flex>
-                <md-button id="search" class="md-raised md-warn" ng-click="$ctrl.openLeftMenu()">Search</md-button>
-            </div>
-        </div>
-    </md-toolbar>
+        </md-toolbar>
+    </header>
+
     <main flex>
         <md-content role="main" class="main-content">
             <md-sidenav md-component-id="left" class="md-sidenav-left">
