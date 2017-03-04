@@ -9,11 +9,11 @@ header {
   height: 15vh;
 }
 .main-content {
-  height: 80vh;
+  height: 76vh;
 }
 
 footer {
-  height: 5vh;
+  height: 1vh;
 }
 
 /*main {
@@ -60,4 +60,9 @@ md-input-container {
 
 .md-thumb::after {
   background: #E53935;
+}
+
+/*Cards*/
+.md-subhead {
+  font-size: 1.1em!important;
 }
