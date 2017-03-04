@@ -24,16 +24,18 @@
                     let lng = result.data.results[0].geometry.location.lng;
                     cardService.getCourses(swingURL(lat, lng, distance))
                         .then(data => {
-                            vm.courses = data.courses;
-                            const moreCoursesURL = data.meta.courses.next;
-                            if (moreCoursesURL) {
-                                cardService.getMoreCourses(moreCoursesURL)
-                                    .then(moreCourses => {
-                                        moreCourses.forEach(element => {
-                                            vm.courses.push(element);
-                                        });
+                            vm.courses = data.courses
+                            console.log(data);
+                            if (data.meta.courses.next !== undefined) {
+                                cardService.getMoreCourses(data.meta.courses.next).then(courses => {
+                                    courses.forEach(course => {
+                                        vm.courses.push(course);
+
                                     })
+                                })
                             }
+                            console.log(vm.courses);
+
                             // if (publicCheck === true && privateCheck !== true) {
                             //     console.log('public only');
                             //
@@ -68,5 +70,16 @@
         let swingToken = '&access_token=9a7a612e-4ccf-4deb-a2da-cde8bc46db01';
         return swingAPI + swingCoordinates + swingRadius + holeCount + orderBy + swingToken;
     }
+
+    // function recursiveGetMoreCourses(data) {
+    //     if (data.meta.courses.next !== undefined) {
+    //         cardService.getMoreCourses(data.meta.courses.next)
+    //             .then(moreCourses => {
+    //                 moreCourses.forEach(element => {
+    //                     vm.courses.push(element);
+    //                 });
+    //             })
+    //     }
+    // }
 
 })();
