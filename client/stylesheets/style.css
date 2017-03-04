@@ -8,7 +8,7 @@ header, footer {
 header {
   height: 15vh;
 }
-main {
+.main-content {
   height: 80vh;
 }
 
@@ -28,9 +28,6 @@ a {
   padding-left: .5em;
 }
 
-.main-content  {
-  height: 500px;
-}
 
 md-sidenav {
   width: 25em;
