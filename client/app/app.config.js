@@ -10,7 +10,7 @@
         $mdThemingProvider
             .theme('default')
             .primaryPalette('green')
-            .accentPalette('teal')
+            .accentPalette('red')
             .warnPalette('red')
             .backgroundPalette('grey');
         $mdThemingProvider
@@ -29,12 +29,12 @@
                 url: '/',
                 component: 'cardList',
             })
-            // .state({
-            //     name: 'playground',
-            //     parent: 'app',
-            //     url: '/playground/',
-            //     component: 'playGround',
-            // })
+        // .state({
+        //     name: 'playground',
+        //     parent: 'app',
+        //     url: '/playground/',
+        //     component: 'playGround',
+        // })
     }
 
 }());

@@ -48,19 +48,36 @@ form {
   align-items: center;
 }
 
-.slider .md-track-container {
-  background: #E53935;
-}
-
 md-input-container {
   width: 70%!important;
   display: flex;
   justify-content: center;
 }
 
+.distance {
+  width: 70%!important;
+}
+
+#distance-slider {
+  width: 100%!important;
+  margin-top: 0;
+}
+
+.distance p {
+  font-size: .85em;
+  margin-bottom: 0;
+  color: #E53935;
+}
+
+.slider .md-track-container {
+  background: #E53935;
+}
+
 .md-thumb::after {
   background: #E53935;
 }
+
+
 
 /*Cards*/
 .md-subhead {

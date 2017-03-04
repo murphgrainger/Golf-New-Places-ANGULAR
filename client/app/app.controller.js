@@ -24,8 +24,8 @@
                     // console.log(url);
                     cardService.getCourses(swingURL(lat, lng, distance))
                         .then(courses => {
-                            console.log(courses);
                             vm.courses = courses;
+                            delete vm.search;
                             return courses;
                         });
                 })
