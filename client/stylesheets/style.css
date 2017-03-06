@@ -48,36 +48,24 @@ form {
   align-items: center;
 }
 
+/*Top Bar Form*/
+.form-area {
+  width: 90%;
+}
+
 md-input-container {
-  width: 70%!important;
-  display: flex;
-  justify-content: center;
+  width: 15em;
+  margin: 0;
 }
 
-.distance {
-  width: 70%!important;
+.form-column h3{
+  margin-bottom: .25em;
 }
 
-#distance-slider {
-  width: 100%!important;
-  margin-top: 0;
+#course-type-label {
+  margin-top: 1em;
+  margin-bottom: 1.1em;
 }
-
-.distance p {
-  font-size: .85em;
-  margin-bottom: 0;
-  color: #E53935;
-}
-
-.slider .md-track-container {
-  background: #E53935;
-}
-
-.md-thumb::after {
-  background: #E53935;
-}
-
-
 
 /*Cards*/
 .md-subhead {

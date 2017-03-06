@@ -17,34 +17,17 @@
 
     <main flex>
         <md-content role="main" class="main-content" layout-align="center center">
-            <md-sidenav md-component-id="left" class="md-sidenav-left">
-                <md-content layout-padding>
-                    <h2 md-colors="{color: 'green-500'}">Where would you like to play?</h2>
-                    <form name="searchForm" ng-submit="$ctrl.formSubmit($ctrl.search)" novalidate>
-                        <md-input-container>
-                            <label for="city" md-colors="{color: 'green-500'}">City</label>
-                            <input type="text" id="city" ng-model="$ctrl.search.city" md-colors="{color: 'green-500', 'border-color': 'primary-600'}"></md-input-container>
-                        <div layout="column" class="distance">
-                            <p>Distance(mi)</p>
-                            <md-input-container id="distance-slider">
-                                <md-slider flex md-discrete class="md-warn slider" step="1" min="5" max="100" aria-label="rating" ng-model="$ctrl.search.distance"></md-slider>
-                            </md-input-container>
-                            <div class="course-type" layout="row" layout-align="center center">
-                                <md-checkbox ng-model="$ctrl.search.public" aria-label="Checkbox 1" class="md-default">
-                                    Public
-                                </md-checkbox>
-                                <md-checkbox ng-model="$ctrl.search.private" aria-label="Checkbox 2">
-                                    Private
-                                </md-checkbox>
-                            </div>
-                        </div>
-                        <md-input-container>
-                            <md-button class="md-raised md-warn" type="submit" ng-click="$ctrl.openLeftMenu()">Search</md-button>
-                        </md-input-container>
-                    </form>
-                </md-content>
-            </md-sidenav>
-            <card-list courses="$ctrl.courses"></card-list>
+            <div class="form-container" flex="100">
+                <form-comp courses="$ctrl.courses"></form-comp>
+            </div>
+            <div layout="row">
+                <div flex-gt-sm="70">
+                    <card-list courses="$ctrl.courses"></card-list>
+                </div>
+                <div flex-gt-sm="30">
+                    <h2>Map Goes Here</h2>
+                </div>
+            </div>
         </md-content>
     </main>
     <footer>

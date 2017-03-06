@@ -29,12 +29,12 @@
                 url: '/',
                 component: 'cardList',
             })
-        // .state({
-        //     name: 'playground',
-        //     parent: 'app',
-        //     url: '/playground/',
-        //     component: 'playGround',
-        // })
+            .state({
+                name: 'form',
+                parent: 'app',
+                url: '/',
+                component: 'formComp',
+            })
     }
 
 }());

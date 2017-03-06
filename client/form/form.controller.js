@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('PlayController', PlayController);
+        .controller('FormController', FormController);
 
-    function PlayController() {
+    function FormController(cardService) {
         const vm = this;
         vm.$onInit = function() {
 
