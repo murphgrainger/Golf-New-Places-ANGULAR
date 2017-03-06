@@ -25,7 +25,7 @@
             })
             .state({
                 name: 'home',
-                parent: 'app',
+                parent: 'home',
                 url: '/',
                 component: 'cardList',
             })

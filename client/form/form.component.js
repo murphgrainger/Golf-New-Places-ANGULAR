@@ -5,7 +5,7 @@
         .module('app')
         .component('formComp', {
             bindings: {
-                courses: '<'
+                courses: '='
             },
             controller: 'FormController',
             templateUrl: 'form/form.template.html'
