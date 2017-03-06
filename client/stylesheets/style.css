@@ -75,3 +75,17 @@ md-input-container {
 .phone-number {
   font-size: .9em!important;
 }
+
+/*Map*/
+
+.map-container {
+  margin-right: 3em;
+  margin-bottom: 1em;
+  padding-top: .5em;
+}
+
+#map {
+  width: 100%;
+  height: 53vh;
+  margin-right: 2em;
+}

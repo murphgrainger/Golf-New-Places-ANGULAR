@@ -5,9 +5,10 @@
         .module('app')
         .controller('MapController', MapController);
 
-    function MapController(mapService) {
+    function MapController() {
         const vm = this;
         vm.$onInit = function() {
+            console.log('hey from map controller');
             var map = null;
 
             initMap()

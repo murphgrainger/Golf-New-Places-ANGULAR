@@ -25,7 +25,7 @@
             })
             .state({
                 name: 'home',
-                parent: 'home',
+                parent: 'app',
                 url: '/',
                 component: 'cardList',
             })
@@ -34,6 +34,12 @@
                 parent: 'app',
                 url: '/',
                 component: 'formComp',
+            })
+            .state({
+                name: 'map',
+                parent: 'app',
+                url: '/',
+                component: 'mapBox',
             })
     }
 
