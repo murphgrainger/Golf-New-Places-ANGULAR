@@ -6,6 +6,10 @@
                 <span class="md-subhead">{{course.addr_1}}
                     {{course.city}}
                     {{course.state_or_province}}</span>
+                <br>
+                <span class="md-subhead phone-number">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    {{course.phone}}</span>
             </md-card-title-text>
             <md-card-title-media>
                 <div class="md-media-md card-media" layout="column" layout-align="center center" style="min-height: 20px">
@@ -17,7 +21,8 @@
             <md-button>
                 <a href="{{course.website}}" aria-label>Website</a>
             </md-button>
-            <md-button>Call</md-button>
+            <md-button>
+                <a href="{{course.phone}}"></a>Call</md-button>
         </md-card-actions>
     </md-card>
 </div>

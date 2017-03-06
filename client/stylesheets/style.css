@@ -71,3 +71,7 @@ md-input-container {
 .md-subhead {
   font-size: 1.1em!important;
 }
+
+.phone-number {
+  font-size: .9em!important;
+}

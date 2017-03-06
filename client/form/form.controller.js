@@ -67,14 +67,4 @@
         return swingAPI + swingCoordinates + swingRadius + holeCount + orderBy + swingToken;
     }
 
-    // function recursiveGetMoreCourses(data) {
-    //     if (data.meta.courses.next !== undefined) {
-    //         cardService.getMoreCourses(data.meta.courses.next)
-    //             .then(moreCourses => {
-    //                 moreCourses.forEach(element => {
-    //                     vm.courses.push(element);
-    //                 });
-    //             })
-    //     }
-    // }
 })();
