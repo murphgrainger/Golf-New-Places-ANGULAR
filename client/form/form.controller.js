@@ -15,23 +15,42 @@
             let city = search.city;
             let publicCheck = search.public;
             let privateCheck = search.private;
+            let allCourses = [];
+            let typedCourses = [];
             cardService.geolocate(buildGeoURL(city))
                 .then(result => {
                     vm.lat = result.data.results[0].geometry.location.lat;
                     vm.lng = result.data.results[0].geometry.location.lng;
                     cardService.getCourses(swingURL(vm.lat, vm.lng, distance))
                         .then(data => {
-                            vm.courses = data.courses
+                            allCourses = data.courses;
                             if (data.meta.courses.next !== undefined) {
                                 cardService.getMoreCourses(data.meta.courses.next).then(courses => {
                                     courses.forEach(course => {
-                                        vm.courses.push(course);
+                                        allCourses.push(course)
                                     })
+                                    if (publicCheck !== undefined && !privateCheck) {
+                                        allCourses.forEach(course => {
+                                            if (course.membership_type !== "private") {
+                                                typedCourses.push(course);
+                                            }
+                                        })
+                                    } else if (!publicCheck && privateCheck !== undefined) {
+                                        allCourses.forEach(course => {
+                                            if (course.membership_type == "private") {
+                                                typedCourses.push(course)
+                                            }
+                                        })
+                                    } else {
+                                        allCourses.forEach(course => {
+                                            typedCourses.push(course)
+                                        })
+                                    }
                                 }).catch(err => {
                                     console.log(err);
                                 })
                             }
-                            console.log(vm.courses);
+                            vm.courses = typedCourses;
                             initMap(vm.lat, vm.lng)
                         });
                 }).catch(err => {
@@ -54,9 +73,8 @@
         let swingCoordinates = `lat=${lat}&lng=${lng}`;
         let swingRadius = `&radius=${distance}`
         let holeCount = '&active_only=yes&hole_count=' + 18;
-        let orderBy = '&order_by=local_rank&from=1';
         let swingToken = '&access_token=9a7a612e-4ccf-4deb-a2da-cde8bc46db01';
-        return swingAPI + swingCoordinates + swingRadius + holeCount + orderBy + swingToken;
+        return swingAPI + swingCoordinates + swingRadius + holeCount + swingToken;
     }
 
     function initMap(latitude, longitude) {
