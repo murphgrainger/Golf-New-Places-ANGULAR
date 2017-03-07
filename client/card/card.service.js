@@ -7,11 +7,6 @@
 
     function cardService($http) {
 
-        this.geolocate = function(googleURL) {
-            return $http.get(googleURL).then(function(response) {
-                return response;
-            });
-        };
         this.getCourses = function(swingURL) {
             return $http.get(swingURL).then(function(response) {
                 return response.data;

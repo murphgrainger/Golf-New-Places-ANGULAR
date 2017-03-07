@@ -5,10 +5,9 @@
         .module('app')
         .controller('FormController', FormController);
 
-    function FormController(cardService) {
+    function FormController(cardService, mapService) {
         const vm = this;
         vm.$onInit = function() {}
-
 
         vm.formSubmit = function(search) {
             let distance = search.distance;
@@ -17,7 +16,7 @@
             let privateCheck = search.private;
             let allCourses = [];
             let typedCourses = [];
-            cardService.geolocate(buildGeoURL(city))
+            mapService.geolocate(buildGeoURL(city))
                 .then(result => {
                     vm.lat = result.data.results[0].geometry.location.lat;
                     vm.lng = result.data.results[0].geometry.location.lng;
@@ -88,17 +87,6 @@
         })
     }
 
-    function addressToMap() {
-        let marker = new google.maps.Marker({
-            position: {
-                lat: Number(this.dataset.lat),
-                lng: Number(this.dataset.lng)
-            },
-            map: map,
-            title: '',
-            snippet: ''
-        });
-        map.panTo(marker.getPosition());
-    }
+
 
 })();
