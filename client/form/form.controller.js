@@ -18,8 +18,8 @@
             let typedCourses = [];
             mapService.geolocate(buildGeoURL(city))
                 .then(result => {
-                    vm.lat = result.data.results[0].geometry.location.lat;
-                    vm.lng = result.data.results[0].geometry.location.lng;
+                    vm.lat = result.lat;
+                    vm.lng = result.lng;
                     cardService.getCourses(swingURL(vm.lat, vm.lng, distance))
                         .then(data => {
                             allCourses = data.courses;
@@ -50,7 +50,7 @@
                                 })
                             }
                             vm.courses = typedCourses;
-                            initMap(vm.lat, vm.lng)
+                            mapService.initMap(vm.lat, vm.lng)
                         });
                 }).catch(err => {
                     console.log(err);
