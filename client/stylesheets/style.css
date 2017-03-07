@@ -91,6 +91,10 @@ md-input-container {
   font-size: .9em!important;
 }
 
+.website {
+  text-decoration: none;
+  color: white;
+}
 
 /*Map*/
 
