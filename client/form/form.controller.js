@@ -17,33 +17,25 @@
             let privateCheck = search.private;
             cardService.geolocate(buildGeoURL(city))
                 .then(result => {
-                    let lat = result.data.results[0].geometry.location.lat;
-                    let lng = result.data.results[0].geometry.location.lng;
-                    cardService.getCourses(swingURL(lat, lng, distance))
+                    vm.lat = result.data.results[0].geometry.location.lat;
+                    vm.lng = result.data.results[0].geometry.location.lng;
+                    cardService.getCourses(swingURL(vm.lat, vm.lng, distance))
                         .then(data => {
                             vm.courses = data.courses
-                            console.log(data);
                             if (data.meta.courses.next !== undefined) {
                                 cardService.getMoreCourses(data.meta.courses.next).then(courses => {
                                     courses.forEach(course => {
                                         vm.courses.push(course);
-
                                     })
+                                }).catch(err => {
+                                    console.log(err);
                                 })
                             }
                             console.log(vm.courses);
-
-                            // if (publicCheck === true && privateCheck !== true) {
-                            //     console.log('public only');
-                            //
-                            // } else if (publicCheck !== true && privateCheck === true) {
-                            //     console.log('private only');
-                            //
-                            // } else {
-                            //     console.log('both');
-                            //
-                            // }
+                            initMap(vm.lat, vm.lng)
                         });
+                }).catch(err => {
+                    console.log(err);
                 })
         }
     }
@@ -66,5 +58,16 @@
         let swingToken = '&access_token=9a7a612e-4ccf-4deb-a2da-cde8bc46db01';
         return swingAPI + swingCoordinates + swingRadius + holeCount + orderBy + swingToken;
     }
+
+    function initMap(latitude, longitude) {
+        let searchCenter = {
+            lat: latitude,
+            lng: longitude
+        };
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 9,
+            center: searchCenter
+        })
+    };
 
 })();

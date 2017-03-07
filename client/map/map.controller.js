@@ -7,23 +7,24 @@
 
     function MapController() {
         const vm = this;
-        vm.$onInit = function() {
-            console.log('hey from map controller');
-            var map = null;
+        vm.$onInit = function() {}
+        var map = null;
 
-            initMap()
 
-            function initMap() {
-                console.log('init map running');
-                let searchCenter = {
-                    lat: 39.7,
-                    lng: -104.96
-                };
-                map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 9,
-                    center: searchCenter
-                });
-            }
-        }
+
+        // function addressToMap() {
+        //     let marker = new google.maps.Marker({
+        //         position: {
+        //             lat: Number(this.dataset.lat),
+        //             lng: Number(this.dataset.lng)
+        //         },
+        //         map: map,
+        //         title: '',
+        //         snippet: ''
+        //     });
+        //     map.panTo(marker.getPosition());
+        // };
+
+
     }
 })();
