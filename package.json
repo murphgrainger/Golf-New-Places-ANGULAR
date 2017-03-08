@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run start-server & npm run start-client & wait",
+    "start": "node server/app.js",
+    "dev": "npm run start-server & npm run start-client & wait",
     "start-server": "nodemon server/app.js",
     "start-client": "lite-server -c liteserver.config.js"
   },
